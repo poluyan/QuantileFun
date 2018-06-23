@@ -34,7 +34,7 @@ title(main="cdf")
 
 cdf <- c(0, cdf)
 
-n = 1000 # number of sample
+n = 10000 # number of sample
 random = NULL
 sample = NULL
 for(i in 1:n)
@@ -52,3 +52,7 @@ for(i in 1:n)
   random = c(random,  rnd)
   sample = c(sample,  fx)
 }
+
+plot(density(sample, bw=0.2))
+rug(sample)
+
