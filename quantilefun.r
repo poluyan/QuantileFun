@@ -20,6 +20,17 @@ f = function (x)
   rez
 }
 
-plot(x,f(x),type="l")
+y <- f(x)
+plot(x,y,type="l")
 rug(x)
 title(main="pdf")
+
+s = sum(y)
+for(i in 1:length(y))
+  y[i] = y[i]/s
+
+cdf <- cumsum(y)
+
+plot(x,cdf,type="l")
+title(main="cdf")
+
