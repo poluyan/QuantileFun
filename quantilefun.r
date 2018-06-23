@@ -25,12 +25,12 @@ plot(x,y,type="l")
 rug(x)
 title(main="pdf")
 
-s = sum(y)
-for(i in 1:length(y))
-  y[i] = y[i]/s
+y <- y/sum(y)
 
 cdf <- cumsum(y)
 
 plot(x,cdf,type="l")
 title(main="cdf")
+
+cdf <- c(0, cdf)
 
